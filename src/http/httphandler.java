@@ -34,12 +34,12 @@ public class httphandler extends HttpServlet {
 	
 	PrintWriter out = response.getWriter();
 	
-	out.println("<html><body>");
 	
-	out.println("naveenkumar");
+	
+	out.println("\n naveenkumar \n");
 	out.println("this is the http handling  get request");
 	
-	out.println("</html></body>");
+	
 	}
 
 
