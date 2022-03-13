@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class httphandler
+ * Servlet implementation class HttpDemo
  */
 @WebServlet("/httphandler")
 public class httphandler extends HttpServlet {
@@ -19,7 +19,7 @@ public class httphandler extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public httphandler() {
+	public httphandler() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,27 +28,35 @@ public class httphandler extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	
-	
-	PrintWriter out = response.getWriter();
-	
-	
-	
-	out.println("\n naveenkumar \n");
-	out.println("this is the http handling  get request");
-	
-	
+		
+		PrintWriter out = response.getWriter();
+		out.println("<html><body>");
+		
+		out.println("<p>hello ");
+		
+		String name = request.getParameter("name");
+		out.println(name);
+		
+		out.println("<br/>THis is handling GET request");
+		
+		out.println("</body></html>");
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter out = response.getWriter();
+		out.println("<html><body>");
+		
+		out.println("<p>hello");
+		
+		String name = request.getParameter("name");
+		out.println(name);
+		
+		out.println("This is handling POST request");
+		
+		out.println("</body></html>");
 	}
 
 }
